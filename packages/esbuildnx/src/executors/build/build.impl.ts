@@ -84,7 +84,7 @@ export function buildExecutor(
     //   js: '// Compiled by esbuildnx ',
     // },
     tsconfig: options.tsConfig,
-    entryPoints: [options.main],
+    entryPoints: Array.isArray(options.main) ? options.main : [options.main],
     outdir,
     // outfile,
     ...esbuildConfig,
